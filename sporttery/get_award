@@ -1,0 +1,13 @@
+# /bin/bash -
+# startTerm 与 endTerm 不能超过 5 年
+curl 'https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=90&provinceId=0&pageSize=50000&isVerify=1&pageNo=1&startTerm=21022&endTerm=21022' \
+  -H 'sec-ch-ua: "Chromium";v="88", "Google Chrome";v="88", ";Not A Brand";v="99"' \
+  -H 'Accept: application/json, text/javascript, */*; q=0.01' \
+  -H 'Referer: https://static.sporttery.cn/' \
+  | jq -r '.value.list[] | [
+    .lotteryDrawNum,
+    .lotteryDrawResult,
+    .prizeLevelList[0].stakeCount, .prizeLevelList[0].stakeAmount, .prizeLevelList[0].totalPrizeamount,
+    .prizeLevelList[1].stakeCount, .prizeLevelList[1].stakeAmount, .prizeLevelList[1].totalPrizeamount,
+    .prizeLevelListRj[0].stakeCount, .prizeLevelListRj[0].stakeAmount, .prizeLevelListRj[0].totalPrizeamount
+  ] | @csv'

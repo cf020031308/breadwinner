@@ -1,0 +1,22 @@
+#!/bin/bash -
+# $1 上一期 这一期
+
+# 准备数据
+python3 get_html.py $1 $2
+python3 get_csv.py $1 $2
+cat csv/$1.csv
+cat csv/$2.csv
+python3 get_total.py
+tail -n 14 csv/total.csv
+# 检查上一期投注成果
+# python3 check_bet.py $1
+# 预测比赛结果
+python3 predict_result.py
+tail -n 14 pred/results.csv
+# 检查策略超参是否需要调整
+# python3 simulate.py
+# 制定投注方案
+python3 bet.py > pred/$2.txt
+cat pred/$2.txt
+# TODO: 发送投注方案，最好再附上下一期投注的截止时间
+# mutt -s "第 $2 期方案" -i pred/$2.txt cf020031308@163.com
