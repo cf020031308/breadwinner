@@ -6,6 +6,8 @@
 
 权威公告可以去 https://www.sporttery.cn/ctzc/ 看在售的是哪期，以及什么时间开奖。
 
+V2EX 上有关于本项目的讨论 https://v2ex.com/t/758563 ，部分评论也比较有价值。
+
 ## 模型性能
 
 模型使用简单的神经网络，单场预测准确率约 54%，可能是基于赔率进行预测的上限了吧。  
@@ -14,6 +16,29 @@
 
 说明类似预测方法早在 2017 年就已经有人在用了，除非有更好的算法能提升单场预测准确率，否则已没有空间。  
 ~~不过可以改改参数，使得几乎每期都有方案可推荐，然后拿去卖软件/卖服务骗钱。~~
+
+## 部署
+
+需要安装 Python 库：
+
+* requests 爬网页
+* beautifulsoup4 解析网页
+* pandas 做数据处理
+* torch 做机器学习
+
+```bash
+pip3 install -r requirements.txt
+```
+
+另外需要安装 [jq](https://github.com/stedolan/jq) 在命令行中处理 JSON，`get_award` 这个脚本里用到。
+
+此外，项目开始时需要新建如下 3 个文件夹，用来装中间数据：
+
+```
+mkdir html csv pred
+```
+
+之后先 `python3 get_html.py` 爬网页（手动改下文件里面的 periods，把新的几期也加进来），再 `python3 get_csv.py` 解析数据，之后就跟下面“日常使用”接轨了。
 
 ## 日常使用
 
