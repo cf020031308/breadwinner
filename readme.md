@@ -1,9 +1,13 @@
-# 失败项目集锦
+# 偷鸡不成项目集锦
+
+坦率地讲，涉及金融市场的好策略如果公开，必然导致使用的人多，最后策略变差。所以这个仓库只收集我目前失败了的案例。
 
 * [加密货币组合套利](arbitrage)
 * [中国体育彩票预测](sporttery)
 
-如果以上经验对您有所启发，欢迎点 star 让更多人看到，或通过以下方式向我捐赠。谢谢！
+我赚不上钱的项目，也许可以帮助更有能力的人去赚钱。
+
+如果以上经验对您有所启发，欢迎点 star 让更多人看到，或通过以下方式向我打赏。谢谢！
 
 <details>
 <summary>微信</summary>
@@ -76,3 +80,4 @@ MM  MMMMMMMMMM  MM            MMMMMMMM    MMMM  MMMMMM
 MM              MM  MM    MM    MM    MMMMMM  MM    MM
 MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
 ```
+</details>
